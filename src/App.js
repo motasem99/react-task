@@ -9,6 +9,7 @@ function App() {
     title: '',
     description: '',
   });
+  const [showError, setShowError] = useState(false);
 
   const [database, setDatabase] = useState({
     red: {
@@ -82,22 +83,30 @@ function App() {
   };
 
   const addDataToDatabase = (color, data) => {
-    setDatabase({
-      ...database,
-      [color]: {
-        ...database[color],
-        list: [data, ...database[color].list],
-      },
-    });
-    updateFormInput({
-      title: '',
-      description: '',
-    });
+    if (formInput.title !== '' && formInput.description !== '') {
+      setDatabase({
+        ...database,
+        [color]: {
+          ...database[color],
+          list: [data, ...database[color].list],
+        },
+      });
+      updateFormInput({
+        title: '',
+        description: '',
+      });
+      if (showError === true) {
+        setShowError(false);
+      }
+    } else {
+      setShowError(true);
+    }
   };
 
   return (
     <div className='App'>
       <FormData updateFormInput={updateFormInput} formInput={formInput} />
+      {showError && <h2 className='p-4'>Please Fill All Information</h2>}
       <DragDropContext onDragEnd={onDragEnd}>
         <Column
           database={database}
