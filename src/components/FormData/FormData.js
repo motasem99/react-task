@@ -9,6 +9,7 @@ const FormData = ({ updateFormInput, formInput }) => {
             placeholder='title'
             name='title'
             id='title'
+            value={formInput.title}
             className='mt-8 border rounded p-4'
             onChange={(e) =>
               updateFormInput({ ...formInput, title: e.target.value })
@@ -19,6 +20,7 @@ const FormData = ({ updateFormInput, formInput }) => {
             name='description'
             id='description'
             className='mt-2 border rounded p-4'
+            value={formInput.description}
             onChange={(e) =>
               updateFormInput({ ...formInput, description: e.target.value })
             }

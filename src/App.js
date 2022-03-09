@@ -89,6 +89,10 @@ function App() {
         list: [data, ...database[color].list],
       },
     });
+    updateFormInput({
+      title: '',
+      description: '',
+    });
   };
 
   return (
