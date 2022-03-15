@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../Card/Card';
 import { Droppable } from 'react-beautiful-dnd';
 
-const Column = ({ database, setDatabase, addDataToDatabase, formInput }) => {
+const Column = ({ database, addDataToDatabase, formInput }) => {
   const createTask = (color) => {
     addDataToDatabase(color, formInput);
   };

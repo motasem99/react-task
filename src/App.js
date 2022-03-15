@@ -112,7 +112,6 @@ function App() {
           database={database}
           addDataToDatabase={addDataToDatabase}
           formInput={formInput}
-          setDatabase={setDatabase}
         />
       </DragDropContext>
     </div>
