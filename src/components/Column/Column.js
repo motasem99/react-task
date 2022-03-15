@@ -26,6 +26,7 @@ const Column = ({ database, addDataToDatabase, formInput }) => {
                 color={'red'}
                 formInput={data}
                 index={index}
+                key={index}
               />
             ))}
             {provided.placeholder}
@@ -50,6 +51,7 @@ const Column = ({ database, addDataToDatabase, formInput }) => {
                 formInput={data}
                 color={'green'}
                 index={index}
+                key={index}
               />
             ))}{' '}
             {provided.placeholder}
@@ -74,6 +76,7 @@ const Column = ({ database, addDataToDatabase, formInput }) => {
                 formInput={data}
                 color={'blue'}
                 index={index}
+                key={index}
               />
             ))}{' '}
             {provided.placeholder}
@@ -99,6 +102,7 @@ const Column = ({ database, addDataToDatabase, formInput }) => {
                 formInput={data}
                 index={index}
                 color={'black'}
+                key={index}
               />
             ))}{' '}
             {provided.placeholder}
